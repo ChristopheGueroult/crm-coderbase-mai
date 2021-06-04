@@ -1,5 +1,7 @@
 <header class="fixed-top">
-  <!-- ici le header -->
+  <!-- projection (transclusion) de header component ici -->
+  <ng-content select=".tr-header"></ng-content>
+  <ng-content select=".tr-footer"></ng-content>
 </header>
 <main>
 
@@ -9,7 +11,8 @@
 
   <aside>
     <div class="scroller">
-      <!-- ici le nav -->
+      <!-- projection (transclusion) de nav component ici -->
+      <ng-content select=".tr-nav"></ng-content>
     </div>
   </aside>
 
@@ -17,12 +20,14 @@
 
     <div class="contents">
 
-      <!-- le contenu de nos pages -->
+      <!-- projection (transclusion) d'un component dynamique ici (selon la route sur laquelle vous êtes) -->
+      <ng-content select=".tr-content"></ng-content>
 
     </div>
 
     <footer>
-      <!-- ici le footer -->
+      <!-- projection (transclusion) de footer component ici -->
+      <ng-content select=".tr-footer"></ng-content>
     </footer>
 
   </div>

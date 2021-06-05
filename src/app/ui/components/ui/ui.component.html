@@ -1,7 +1,10 @@
 <header class="fixed-top">
   <span (click)="toggle()">
-    <ng-content *ngIf="open; else esleBlock" select=".tr-icon-close"></ng-content>
+    <ng-container *ngIf="open; then thenBlock else esleBlock"></ng-container>
   </span>
+  <ng-template #thenBlock>
+    <ng-content select=".tr-icon-close"></ng-content>
+  </ng-template>
   <ng-template #esleBlock>
     <ng-content select=".tr-icon-open"></ng-content>
   </ng-template>
